@@ -1,0 +1,78 @@
+{
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "red",
+    "backgroundColor": "rgb(181, 136, 211)",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/Home/Index",
+        "text": "首页",
+        "iconPath": "/static/ic-tabbar-home.png",
+        "selectedIconPath": "/static/ic-tabbar-home-a.png"
+      },
+      {
+        "pagePath": "pages/Detail/Index",
+        "text": "学习",
+        "iconPath": "/static/ic-tabbar-detail.png",
+        "selectedIconPath": "/static/ic-tabbar-detail-a.png"
+      },
+      {
+        "pagePath": "pages/News/Index",
+        "text": "消息",
+        "iconPath": "/static/ic-tabbar-news.png",
+        "selectedIconPath": "/static/ic-tabbar-news-a.png"
+      },
+      {
+        "pagePath": "pages/Me/Index",
+        "text": "我的",
+        "iconPath": "/static/ic-tabbar-me.png",
+        "selectedIconPath": "/static/ic-tabbar-me-a.png"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "path": "pages/Home/Index",
+      "style": {
+        "navigationBarTitleText": "home"
+      }
+    },
+    {
+      "path": "pages/News/Index",
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
+      "path": "pages/Detail/Index",
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
+      "path": "pages/Me/Index",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/opages/Account/Login/Index",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/opages/Account/Registe/Index",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "demo-one",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  }
+}
