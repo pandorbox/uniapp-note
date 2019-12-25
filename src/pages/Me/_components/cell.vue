@@ -50,7 +50,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(181, 136, 211);
+  background-color: #ddd;
 }
 .item {
   width: 90%;

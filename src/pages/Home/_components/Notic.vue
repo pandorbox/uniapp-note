@@ -56,7 +56,7 @@ export default {
   width: 100%;
 }
 .notic {
-  width: 90%;
+  width: 690px;
   height: 80px;
   display: flex;
   flex-direction: row;

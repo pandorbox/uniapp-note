@@ -50,13 +50,16 @@ export default {
 </script>
 <style lang="css" scoped>
 .components {
+  position: fixed;
+  top: 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 60px;
-  background-color: rgb(181, 136, 211);
+  background-color: #ddd;
   line-height: 60px;
+  z-index: 10;
 }
 .isLogin {
   width: 92%;
