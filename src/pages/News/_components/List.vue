@@ -10,13 +10,24 @@
     </div>
     <div class="list-all" v-if="tab==1">
       <div class="item" v-for="(item,index) in listone" :key="index">
-        <div class="item-tit">{{item.tit}}</div>
+        <div class="item-tit">
+          <text>{{item.tit}}</text>
+          <div class="choose" @click="onOneChoose(index)">
+            <img v-if="item.choose" class="icon-choose" src="../_static/choose.png" alt />
+            <img v-if="!item.choose" class="icon-choose" src="../_static/unchoose.png" alt />
+          </div>
+        </div>
         <div class="item-msg">{{item.msg}}</div>
       </div>
     </div>
     <div class="list-unread" v-else>
       <div class="item" v-for="(item,index) in listtwo" :key="index">
-        <div class="item-tit">{{item.tit}}</div>
+        <div class="item-tit">
+          <text>{{item.tit}}</text>
+          <div class="choose">
+            <img src alt />
+          </div>
+        </div>
         <div class="item-msg">{{item.msg}}</div>
       </div>
     </div>
@@ -48,16 +59,28 @@ export default {
       listtwo: [
         { tit: "系统通知", msg: "你发布的《css随手记》已通过审核" },
         { tit: "互动消息", msg: "‘@李子柒’评论了你的《css随手记》" }
-      ]
+      ],
+      newListOne: []
     };
   },
-  mounted() {},
+  mounted() {
+    let arr1 = this.listone;
+    for (let i = 0; i < arr1.length; i++) {
+      arr1[i].choose = true;
+    }
+    this.listone = arr1;
+    return this.listone;
+  },
   methods: {
     onTab(index) {
       this.tab = index;
     },
     onItem() {
       this.$emit("item", {});
+    },
+    onOneChoose(index) {
+      console.log(this.listone[index].choose);
+      this.listone[index].choose = !this.listone[index].choose;
     }
   }
 };
@@ -82,7 +105,7 @@ export default {
   height: 100%;
 }
 .ontab {
-  background-color: rgb(104, 101, 101);
+  background-color: #666;
   color: #ffffff;
 }
 .list-all,
@@ -93,7 +116,7 @@ export default {
 .item {
   width: 100%;
   margin-top: 20px;
-  background-color: rgb(104, 101, 101);
+  background-color: #666;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,8 +125,25 @@ export default {
 }
 .item-tit {
   width: 690px;
+  height: 50px;
   border-bottom: 1px solid #ffffff;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.choose {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  background-color: #ffffff;
+}
+.icon-choose {
+  width: 40px;
+  height: 40px;
 }
 .item-msg {
   width: 690px;

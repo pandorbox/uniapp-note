@@ -11,11 +11,21 @@
           <div class="text">
             <text class="text-tit">{{item.tit}}</text>
             <text class="text-msg">{{item.msg}}</text>
-            <div class="bottom">
+            <div class="bottom" v-if="item.state=='已发布'">
               <img class="icon-look" src="../_static/look.png" alt />
               <text>{{item.look}}</text>
               <img class="icon-zan" src="../_static/zan.png" alt />
               <text>{{item.zan}}</text>
+            </div>
+            <div class="bottom bottom-btn" v-if="item.state=='未发布'">
+              <div class="state state-fabu">
+                <text>发布</text>
+              </div>
+            </div>
+            <div class="bottom bottom-btn" v-if="item.state=='审核中'">
+              <div class="state">
+                <text>发布审核中</text>
+              </div>
             </div>
           </div>
         </div>
@@ -46,7 +56,8 @@ export default {
               tit: "这是标题这是标题",
               msg: "这是内容这是内容这是内容这是内容这是内容这是内容",
               look: 29,
-              zan: 10
+              zan: 10,
+              state: "未发布"
             },
             {
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
@@ -54,7 +65,17 @@ export default {
               msg:
                 "这是内容这是内容这是内是内容这是内容这是内是内容这是内容这是内容这是内容这是内容这是内容",
               look: 29,
-              zan: 10
+              zan: 10,
+              state: "已发布"
+            },
+            {
+              img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
+              tit: "这是标题这是标题标题这是标题标题这是标题",
+              msg:
+                "这是内容这是内容这是内是内容这是内容这是内是内容这是内容这是内容这是内容这是内容这是内容",
+              look: 29,
+              zan: 10,
+              state: "审核中"
             }
           ]
         },
@@ -66,7 +87,8 @@ export default {
               tit: "这是标题这是标题",
               msg: "这是内容这是内容这是内容这是内容这是内容这是内容",
               look: 29,
-              zan: 10
+              zan: 10,
+              state: "已发布"
             },
             {
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
@@ -74,7 +96,8 @@ export default {
               msg:
                 "这是内容这是内容这是内是内容这是内容这是内是内容这是内容这是内容这是内容这是内容这是内容",
               look: 29,
-              zan: 10
+              zan: 10,
+              state: "审核中"
             }
           ]
         },
@@ -86,7 +109,8 @@ export default {
               tit: "这是标题这是标题",
               msg: "这是内容这是内容这是内容这是内容这是内容这是内容",
               look: 29,
-              zan: 10
+              zan: 10,
+              state: "已发布"
             },
             {
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
@@ -94,7 +118,8 @@ export default {
               msg:
                 "这是内容这是内容这是内是内容这是内容这是内是内容这是内容这是内容这是内容这是内容这是内容",
               look: 29,
-              zan: 10
+              zan: 10,
+              state: "已发布"
             }
           ]
         }
@@ -191,14 +216,27 @@ export default {
   color: #666;
 }
 .bottom {
-  width: 100%;
+  width: 90%;
   height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  text-align: right;
+  justify-content: flex-end;
   line-height: 50px;
   font-size: 25px;
+}
+.bottom-btn {
+  width: 100%;
+}
+.state {
+  width: 50%;
+  height: 100%;
+  background-color: #666;
+  color: #ffffff;
+  text-align: center;
+}
+.state-fabu {
+  background-color: rgb(219, 74, 74);
 }
 .icon-look,
 .icon-zan {

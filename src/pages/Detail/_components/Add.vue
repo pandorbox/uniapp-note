@@ -35,7 +35,6 @@ export default {
   align-items: center;
   width: 100px;
   position: fixed;
-  right: 30px;
   bottom: 140px;
 }
 .add {
