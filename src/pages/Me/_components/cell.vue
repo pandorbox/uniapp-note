@@ -26,7 +26,7 @@ export default {
   name: "Cell",
   data() {
     return {
-      items: ["个人资料", "密码修改", "我的钱包", "充值中心", "联系客服"]
+      items: ["个人资料", "我的关注", "我的钱包", "充值中心", "联系客服"]
     };
   },
   mounted() {},

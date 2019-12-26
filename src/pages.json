@@ -13,7 +13,7 @@
       },
       {
         "pagePath": "pages/Detail/Index",
-        "text": "学习",
+        "text": "笔记",
         "iconPath": "/static/ic-tabbar-detail.png",
         "selectedIconPath": "/static/ic-tabbar-detail-a.png"
       },
@@ -35,19 +35,19 @@
     {
       "path": "pages/Home/Index",
       "style": {
-        "navigationBarTitleText": "home"
+        "navigationBarTitleText": "首页"
       }
     },
     {
       "path": "pages/News/Index",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "消息"
       }
     },
     {
       "path": "pages/Detail/Index",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "笔记"
       }
     },
     {
