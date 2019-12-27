@@ -1,17 +1,20 @@
 <template>
   <div class="components" v-if="data !== ''">
     <List />
+    <Button />
   </div>
 </template>
 <script lang="ts">
 import List from "./_components/List.vue";
+import Button from "./_components/Button.vue";
+
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import DData from "./Data";
 import NData, { Param, Data } from "./NData";
 import Logic from "./Logic";
 import BaseVue from "@/core/base/BaseVue";
 @Component({
-  components: { List }
+  components: { List, Button }
 })
 export default class Index extends Mixins(BaseVue) {
   logic = new Logic();

@@ -13,22 +13,25 @@
         <div class="item-tit">
           <text>{{item.tit}}</text>
           <div class="choose" @click="onOneChoose(index)">
-            <img v-if="item.choose" class="icon-choose" src="../_static/choose.png" alt />
-            <img v-if="!item.choose" class="icon-choose" src="../_static/unchoose.png" alt />
+            <img v-if="chooseOne[index]" class="icon-choose" src="../_static/choose.png" alt />
+            <img v-if="!chooseOne[index]" class="icon-choose" src="../_static/unchoose.png" alt />
           </div>
         </div>
         <div class="item-msg">{{item.msg}}</div>
+        <div class="item-look" @click="onLook(index)">点击查看>></div>
       </div>
     </div>
     <div class="list-unread" v-else>
       <div class="item" v-for="(item,index) in listtwo" :key="index">
         <div class="item-tit">
           <text>{{item.tit}}</text>
-          <div class="choose">
-            <img src alt />
+          <div class="choose" @click="onTwoChoose(index)">
+            <img v-if="chooseTwo[index]" class="icon-choose" src="../_static/choose.png" alt />
+            <img v-if="!chooseTwo[index]" class="icon-choose" src="../_static/unchoose.png" alt />
           </div>
         </div>
         <div class="item-msg">{{item.msg}}</div>
+        <div class="item-look" @click="onLook(index)">点击查看>></div>
       </div>
     </div>
   </div>
@@ -60,16 +63,21 @@ export default {
         { tit: "系统通知", msg: "你发布的《css随手记》已通过审核" },
         { tit: "互动消息", msg: "‘@李子柒’评论了你的《css随手记》" }
       ],
-      newListOne: []
+      chooseOne: [],
+      chooseTwo: []
     };
   },
   mounted() {
-    let arr1 = this.listone;
-    for (let i = 0; i < arr1.length; i++) {
-      arr1[i].choose = true;
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < this.listone.length; i++) {
+      arr1[i] = false;
     }
-    this.listone = arr1;
-    return this.listone;
+    for (let i = 0; i < this.listtwo.length; i++) {
+      arr2[i] = false;
+    }
+    this.chooseOne = arr1;
+    this.chooseTwo = arr2;
   },
   methods: {
     onTab(index) {
@@ -79,8 +87,12 @@ export default {
       this.$emit("item", {});
     },
     onOneChoose(index) {
-      console.log(this.listone[index].choose);
-      this.listone[index].choose = !this.listone[index].choose;
+      let bool = !this.chooseOne[index];
+      this.chooseOne.splice(index, 1, bool);
+    },
+    onTwoChoose(index) {
+      let bool = !this.chooseTwo[index];
+      this.chooseTwo.splice(index, 1, bool);
     }
   }
 };
@@ -154,5 +166,13 @@ export default {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
+}
+.item-look {
+  width: 690px;
+  line-height: 30px;
+  font-size: 25px;
+  text-align: right;
+  margin-right: 30px;
+  margin-top: 20px;
 }
 </style>
