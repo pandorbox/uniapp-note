@@ -1,20 +1,17 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <List />
-    <Add @add="logic.onAdd()" />
+    <Test :items="logic.data.needLogin" @item="logic.onItem()" />
   </div>
 </template>
 <script lang="ts">
-import List from "./_components/List.vue";
-import Add from "./_components/Add.vue";
-
+import Test from "./_components/test.vue";
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import DData from "./Data";
 import NData, { Param, Data } from "./NData";
 import Logic from "./Logic";
 import BaseVue from "@/core/base/BaseVue";
 @Component({
-  components: { List, Add }
+  components: { Test }
 })
 export default class Index extends Mixins(BaseVue) {
   logic = new Logic();

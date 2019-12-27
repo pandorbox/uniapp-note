@@ -26,5 +26,9 @@ export default {
   registe: {
     url: "pages/opages/Account/Registe/Index",
     tit: "注册"
+  },
+  addNote: {
+    url: "pages/opages/Note/AddNote/Index",
+    tit: "新增笔记"
   }
 };

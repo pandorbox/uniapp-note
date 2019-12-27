@@ -1,6 +1,6 @@
 <template>
   <div class="components">
-    <div class="add">
+    <div class="add" @click="onAdd()">
       <img class="icon-add" src="../_static/add.png" alt />
       <text>新增</text>
     </div>
@@ -22,8 +22,8 @@ export default {
   },
   mounted() {},
   methods: {
-    onTab(index) {
-      this.tabIndex = index;
+    onAdd() {
+      this.$emit("add", {});
     }
   }
 };

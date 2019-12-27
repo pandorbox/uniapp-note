@@ -4,12 +4,11 @@ import NetData from "./NData";
 export class Data extends BaseData {
   constructor() {
     super();
-    this.needLogin = true;
   }
 }
 
 /**
- * 首页逻辑
+ * 逻辑
  */
 export default class Logic extends BaseLogic {
   data = new Data();
@@ -21,11 +20,8 @@ export default class Logic extends BaseLogic {
     await this.netData.getNetData(this.param);
     await this.refreshData(this.netData.data);
   }
+  /** 事件 */
   async onItem(param: any) {
     let res = await this.netData.getMyMsg();
-  }
-  /** 跳转到新增笔记 */
-  async onAdd() {
-    await this.page.openPage("addNote");
   }
 }
