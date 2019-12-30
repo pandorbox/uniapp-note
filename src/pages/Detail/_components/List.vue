@@ -9,8 +9,9 @@
         <div class="item" v-for="(item,index) in items.list" :key="index">
           <img class="item-img" :src="item.img" alt />
           <div class="text">
-            <text class="text-tit">{{item.tit}}</text>
-            <text class="text-msg">{{item.msg}}</text>
+            <text class="text-tit" @click="onItem(item.id)">{{item.tit}}</text>
+            <text class="text-msg" @click="onItem(item.id)">{{item.msg}}</text>
+            <!-- 底部判断显示内容 -->
             <div class="bottom" v-if="item.state=='已发布'">
               <img class="icon-look" src="../_static/look.png" alt />
               <text>{{item.look}}</text>
@@ -52,6 +53,7 @@ export default {
           type: "最近添加",
           list: [
             {
+              id: 7,
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
               tit: "这是标题这是标题",
               msg: "这是内容这是内容这是内容这是内容这是内容这是内容",
@@ -60,6 +62,7 @@ export default {
               state: "未发布"
             },
             {
+              id: 7,
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
               tit: "这是标题这是标题标题这是标题标题这是标题",
               msg:
@@ -69,6 +72,8 @@ export default {
               state: "已发布"
             },
             {
+              id: 7,
+
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
               tit: "这是标题这是标题标题这是标题标题这是标题",
               msg:
@@ -83,6 +88,8 @@ export default {
           type: "Css",
           list: [
             {
+              id: 7,
+
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
               tit: "这是标题这是标题",
               msg: "这是内容这是内容这是内容这是内容这是内容这是内容",
@@ -91,6 +98,8 @@ export default {
               state: "已发布"
             },
             {
+              id: 7,
+
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
               tit: "这是标题这是标题标题这是标题标题这是标题",
               msg:
@@ -105,6 +114,8 @@ export default {
           type: "Vue",
           list: [
             {
+              id: 7,
+
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
               tit: "这是标题这是标题",
               msg: "这是内容这是内容这是内容这是内容这是内容这是内容",
@@ -113,6 +124,8 @@ export default {
               state: "已发布"
             },
             {
+              id: 7,
+
               img: "http://127.0.0.1:3000/img/bg/tuijian.jpg",
               tit: "这是标题这是标题标题这是标题标题这是标题",
               msg:
@@ -131,8 +144,8 @@ export default {
     onTab(index) {
       this.tabIndex = index;
     },
-    onItem() {
-      this.$emit("item", {});
+    onItem(param) {
+      this.$emit("item", { id: param });
     }
   }
 };

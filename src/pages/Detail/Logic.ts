@@ -21,11 +21,13 @@ export default class Logic extends BaseLogic {
     await this.netData.getNetData(this.param);
     await this.refreshData(this.netData.data);
   }
-  async onItem(param: any) {
-    let res = await this.netData.getMyMsg();
-  }
   /** 跳转到新增笔记 */
   async onAdd() {
     await this.page.openPage("addNote");
+  }
+  /** 点击item  */
+  async onItem(param: any) {
+    let id = param.id;
+    this.page.openPage("noteDetail", { id: id });
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <List />
+    <List @item="logic.onItem" />
     <Add @add="logic.onAdd()" />
   </div>
 </template>

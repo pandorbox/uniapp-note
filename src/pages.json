@@ -73,6 +73,12 @@
       "style": {
         "navigationBarTitleText": ""
       }
+    },
+    {
+      "path": "pages/opages/Note/NoteDetail/Index",
+      "style": {
+        "navigationBarTitleText": ""
+      }
     }
   ],
   "globalStyle": {

@@ -30,5 +30,9 @@ export default {
   addNote: {
     url: "pages/opages/Note/AddNote/Index",
     tit: "新增笔记"
+  },
+  noteDetail: {
+    url: "pages/opages/Note/NoteDetail/Index",
+    tit: "笔记详情"
   }
 };

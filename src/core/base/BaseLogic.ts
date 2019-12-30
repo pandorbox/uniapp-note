@@ -73,6 +73,9 @@ export default class BaseLogic {
       this.setNav.navTit(option.navtit);
     }
     this.data.user = await this.storage.getUser();
+    if (option.id) {
+      this.param.id = option.id;
+    }
   }
   /**
    * 生命周期-页面加载
