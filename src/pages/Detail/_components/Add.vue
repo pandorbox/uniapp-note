@@ -34,10 +34,10 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100px;
-  position: fixed;
-  bottom: 140px;
 }
 .add {
+  position: fixed;
+  bottom: calc(var(--window-bottom) + 20px);
   width: 100px;
   height: 100px;
   border-radius: 50%;

@@ -42,7 +42,7 @@ export default {
   flex-direction: row;
   align-items: center;
   position: fixed;
-  bottom: 0;
+  bottom: calc(var(--window-bottom));
   line-height: 80px;
 }
 .del {

@@ -1,6 +1,6 @@
 <template>
   <div class="components">
-    <div class="head">
+    <div class="head" :class="web?'web':''">
       <div v-if="!user.name==''" class="isLogin">
         <text class="user">{{user.name}}</text>
         <text>|</text>
@@ -27,6 +27,12 @@ export default {
       type: Object,
       default: () => {
         return {};
+      }
+    },
+    web: {
+      type: Boolean,
+      default: () => {
+        return false;
       }
     }
   },
@@ -56,17 +62,22 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  height: 60px;
 }
 .head {
   width: 750px;
   position: fixed;
-  top: 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #ddd;
   line-height: 60px;
   z-index: 10;
+  border-bottom: 1px solid rgba(109, 103, 103, 0.867);
+}
+.web {
+  top: 88px;
 }
 .isLogin {
   width: 690px;

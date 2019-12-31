@@ -3,9 +3,12 @@ import NetData from "./NData";
 import User from "@/core/item/userInfo";
 
 export class Data extends BaseData {
+  /** web */
+  web: boolean;
   constructor() {
     super();
     this.needLogin = true;
+    this.web = false;
   }
 }
 
@@ -19,6 +22,9 @@ export default class Logic extends BaseLogic {
     super();
   }
   async onBeingCreated() {
+    if (this.platform.platform == "web") {
+      this.data.web = true;
+    }
     await this.netData.getNetData(this.param);
     await this.refreshData(this.netData.data);
   }

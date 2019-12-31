@@ -1,6 +1,6 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Test :user="logic.data.user" @item="logic.onItem()" />
+    <Test :user="logic.data.user" @item="emit($event,'onItem')" />
     <Cell />
   </div>
 </template>

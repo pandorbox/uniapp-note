@@ -1,7 +1,7 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Form @onInput="logic.onInput" />
-    <Submit @submit="logic.onSubmit" />
+    <Form @onInput="emit($event,'onInput')" />
+    <Submit @submit="emit($event,'onSubmit')" />
   </div>
 </template>
 <script lang="ts">

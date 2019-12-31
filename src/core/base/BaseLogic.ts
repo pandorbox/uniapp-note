@@ -5,6 +5,8 @@ import Storage from "../utils/Storage";
 import UserInfo from "../item/userInfo";
 import Toast from "../utils/Toast";
 import SetTitle from "../utils/SetNavtit";
+import Platform from "../utils/Platform";
+
 export class Param extends LParam {}
 export class Data {
   /** 数据组 */
@@ -34,6 +36,8 @@ export default class BaseLogic {
   toast: Toast;
   /** 标题设置 */
   setNav: SetTitle;
+  /** 平台 */
+  platform: Platform;
   constructor() {
     this.param = new Param();
     this.data = new Data();
@@ -42,6 +46,7 @@ export default class BaseLogic {
     this.storage = new Storage();
     this.toast = new Toast();
     this.setNav = new SetTitle();
+    this.platform = new Platform();
   }
   /**
    * 刷新视图

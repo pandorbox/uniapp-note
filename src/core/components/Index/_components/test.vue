@@ -28,6 +28,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
 }
 </style>

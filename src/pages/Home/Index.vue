@@ -1,10 +1,11 @@
 <template>
   <div class="page" v-if="data !== ''">
     <Head
-      @login="logic.onLogin()"
+      @login="emit($event,'onLogin')"
       :user="logic.data.user"
-      @registe="logic.onRegiste()"
-      @out="logic.onOut()"
+      @registe="emit($event,'onRegiste')"
+      @out="emit($event,'onOut')"
+      :web="logic.data.web"
     />
     <Swiper />
     <Notic />

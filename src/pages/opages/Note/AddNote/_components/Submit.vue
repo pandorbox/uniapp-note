@@ -33,12 +33,12 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
   height: 80px;
-  position: fixed;
-  bottom: 0;
 }
 .btn {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   display: flex;
   line-height: 80px;

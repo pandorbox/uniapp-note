@@ -85,6 +85,6 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "demo-one",
     "navigationBarBackgroundColor": "#ccc",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#ccc"
   }
 }

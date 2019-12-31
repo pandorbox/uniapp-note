@@ -21,6 +21,22 @@ export default class BaseVue extends Vue {
     this.data = data;
   }
   /**
+   * 发送事件
+   * @param event 参数
+   * @param name 名称
+   */
+  async emit(event: any, name: string) {
+    if (!this.logic || !name || !this.logic[name]) return;
+    let e = event;
+
+    // 兼容小程序
+    if (typeof window == "undefined" && e && e.mp && e.mp.detail && e.mp.detail["__args__"] && e.mp.detail["__args__"][0]) {
+      e = e.mp.detail["__args__"][0];
+    }
+
+    await this.logic[name](e);
+  }
+  /**
    * vue生命周期-创建前
    */
   async beforeCreate() {

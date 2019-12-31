@@ -53,11 +53,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+  width: 750px;
 }
 .bottom {
+  position: fixed;
+  bottom: 0;
   width: 750px;
   height: 100px;
   display: flex;

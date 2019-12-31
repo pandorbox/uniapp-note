@@ -1,6 +1,6 @@
 <template>
-  <div class="components" v-if="data !== ''">
-    <Test :items="logic.data.needLogin" @item="logic.onItem()" />
+  <div class="pages" v-if="data !== ''">
+    <Test :items="logic.data.needLogin" @item="emit($event,'onItem')" />
   </div>
 </template>
 <script lang="ts">
@@ -23,10 +23,10 @@ export default class Index extends Mixins(BaseVue) {
 }
 </script>
 <style lang="css" scoped>
-.components {
+.pages {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
 }
 </style>

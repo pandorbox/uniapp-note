@@ -1,9 +1,9 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Detail :items="logic.data.needLogin" @item="logic.onItem()" />
+    <Detail :items="logic.data.needLogin" @item="emit($event,'onItem')" />
     <Evaluate />
-    <Bottom @reply="logic.onReply()" />
-    <Reply v-if="logic.data.reply" @close="logic.onClose()" />
+    <Bottom @reply="emit($event,'onReply')" />
+    <Reply v-if="logic.data.reply" @close="emit($event,'onClose')" />
   </div>
 </template>
 <script lang="ts">
@@ -33,6 +33,6 @@ export default class Index extends Mixins(BaseVue) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <List @item="logic.onItem" />
-    <Add @add="logic.onAdd()" />
+    <List @item="emit($event,'onItems')" />
+    <Add @add="emit($event,'onAdd')" />
   </div>
 </template>
 <script lang="ts">
@@ -30,6 +30,6 @@ export default class Index extends Mixins(BaseVue) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
 }
 </style>
