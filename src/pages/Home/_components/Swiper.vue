@@ -47,8 +47,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  margin-top: 60px;
+  width: 750px;
 }
 .swiper {
   width: 100%;

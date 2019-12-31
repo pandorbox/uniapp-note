@@ -102,4 +102,12 @@ export default {
   line-height: 40px;
   text-align: center;
 }
+.reply-detail {
+  width: 750px;
+  height: 700px;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 10;
+}
 </style>

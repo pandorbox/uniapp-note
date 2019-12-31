@@ -28,6 +28,6 @@ export default class Logic extends BaseLogic {
   /** 点击item  */
   async onItem(param: any) {
     let id = param.id;
-    this.page.openPage("noteDetail", { id: id });
+    await this.page.openPage("noteDetail", { id: id });
   }
 }

@@ -53,7 +53,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
   margin-top: 200px;
 }
 .form {
@@ -78,7 +78,7 @@ export default {
   height: 70px;
   line-height: 70px;
   font-size: 30px;
-  border: 1px solid #ffffff;
+  border: 1px solid #666;
   padding-left: 20px;
 }
 </style>

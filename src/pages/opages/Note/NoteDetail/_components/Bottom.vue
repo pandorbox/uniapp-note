@@ -1,8 +1,8 @@
 <template>
   <div class="components">
     <div class="bottom">
-      <div class="input-box">
-        <input class="input" type="text" placeholder="去评论..." />
+      <div class="input-box" @click="onReply()">
+        <text>去评论...</text>
       </div>
       <div class="evaluate">
         <img class="evaluate-icon" src="../_static/msg.png" alt />
@@ -41,6 +41,9 @@ export default {
     },
     onZan() {
       this.zan = !this.zan;
+    },
+    onReply() {
+      this.$emit("reply", {});
     }
   }
 };
@@ -73,13 +76,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.input {
-  width: 250px;
   font-size: 25px;
-  height: 60px;
   line-height: 60px;
+  color: #666;
 }
+
 .evaluate {
   width: 50px;
   height: 50px;

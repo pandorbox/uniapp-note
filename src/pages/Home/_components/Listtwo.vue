@@ -75,10 +75,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
 }
 .tab-tit {
-  width: 100%;
+  width: 750px;
   line-height: 70px;
   background-color: #ddd;
   margin-top: 40px;

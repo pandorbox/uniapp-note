@@ -1,6 +1,6 @@
 <template>
   <div class="components">
-    <div class="button">
+    <div class="bottom">
       <div class="del">
         <text>删除选中</text>
       </div>
@@ -20,7 +20,7 @@ export default {
       }
     }
   },
-  name: "Button",
+  name: "Bottom",
   data() {
     return {};
   },
@@ -33,18 +33,17 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  position: fixed;
-  bottom: 100px;
+  width: 750px;
 }
-.button {
-  width: 100%;
+.bottom {
+  width: 750px;
   height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: fixed;
+  bottom: 0;
   line-height: 80px;
-  justify-content: space-between;
 }
 .del {
   width: 50%;

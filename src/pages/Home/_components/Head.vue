@@ -1,14 +1,16 @@
 <template>
   <div class="components">
-    <div v-if="!user.name==''" class="isLogin">
-      <text class="user">{{user.name}}</text>
-      <text>|</text>
-      <text class="loginout" @click="out()">退出</text>
-    </div>
-    <div v-else class="noLogin">
-      <text class="login" @click="login()">登录</text>
-      <text>|</text>
-      <text class="registe" @click="registe()">注册</text>
+    <div class="head">
+      <div v-if="!user.name==''" class="isLogin">
+        <text class="user">{{user.name}}</text>
+        <text>|</text>
+        <text class="loginout" @click="out()">退出</text>
+      </div>
+      <div v-else class="noLogin">
+        <text class="login" @click="login()">登录</text>
+        <text>|</text>
+        <text class="registe" @click="registe()">注册</text>
+      </div>
     </div>
   </div>
 </template>
@@ -50,19 +52,24 @@ export default {
 </script>
 <style lang="css" scoped>
 .components {
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.head {
+  width: 750px;
   position: fixed;
   top: 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 60px;
   background-color: #ddd;
   line-height: 60px;
   z-index: 10;
 }
 .isLogin {
-  width: 92%;
+  width: 690px;
   text-align: right;
 }
 .user {
@@ -76,7 +83,7 @@ export default {
   font-size: 25px;
 }
 .noLogin {
-  width: 92%;
+  width: 690px;
   text-align: right;
 }
 .login {

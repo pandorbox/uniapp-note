@@ -1,12 +1,12 @@
 <template>
   <div class="components" v-if="data !== ''">
     <List />
-    <Button />
+    <Bottom />
   </div>
 </template>
 <script lang="ts">
 import List from "./_components/List.vue";
-import Button from "./_components/Button.vue";
+import Bottom from "./_components/Bottom.vue";
 
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import DData from "./Data";
@@ -14,7 +14,7 @@ import NData, { Param, Data } from "./NData";
 import Logic from "./Logic";
 import BaseVue from "@/core/base/BaseVue";
 @Component({
-  components: { List, Button }
+  components: { List, Bottom }
 })
 export default class Index extends Mixins(BaseVue) {
   logic = new Logic();
@@ -30,6 +30,6 @@ export default class Index extends Mixins(BaseVue) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 750px;
 }
 </style>
