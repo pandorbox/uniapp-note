@@ -47,8 +47,13 @@ export default class Logic extends BaseLogic {
     } else {
       let userinfo = await this.netData.getUser(this.data.account);
       console.log("userInfo:", userinfo);
-      await this.storage.removeUser();
-      await this.storage.setUser(userinfo);
+      if (this.platform.platform == "mp") {
+        await this.storage.mpremoveUser();
+        await this.storage.mpsetUser(userinfo);
+      } else {
+        await this.storage.removeUser();
+        await this.storage.setUser(userinfo);
+      }
       await this.toast.open("登录成功", "success");
       let that = this;
       let openpage = function() {

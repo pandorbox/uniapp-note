@@ -1,5 +1,5 @@
 export default class user {
-  /** 存储token */
+  /** h5存储token */
   async setUser(user: any) {
     uni.setStorage({
       key: "user",
@@ -7,7 +7,7 @@ export default class user {
       success: function() {}
     });
   }
-  /** 获取token */
+  /** h5获取token */
   async getUser() {
     let user: Array<any> = [];
     uni.getStorage({
@@ -18,13 +18,26 @@ export default class user {
     });
     return user[0];
   }
-  /** 清除token */
+  /** h5清除token */
   async removeUser() {
     uni.removeStorage({
       key: "user",
-      success: function(res) {
-        console.log("success");
-      }
+      success: function(res) {}
     });
+  }
+  /** mp存储token */
+  async mpsetUser(user: any) {
+    await uni.setStorageSync("user", user);
+  }
+  /** mp获取token */
+  async mpgetUser() {
+    let user: Array<any> = [];
+    let obj = await uni.getStorageSync("user");
+    user.push(obj);
+    return user[0];
+  }
+  /** mp清除token */
+  async mpremoveUser() {
+    await uni.removeStorageSync("user");
   }
 }

@@ -22,6 +22,7 @@ export default class Logic extends BaseLogic {
     await this.refreshData(this.netData.data);
   }
   async onItem(param: any) {
-    let res = await this.netData.getMyMsg();
+    let user = await this.storage.mpgetUser();
+    console.log(user);
   }
 }

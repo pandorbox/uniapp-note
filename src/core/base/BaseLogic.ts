@@ -77,7 +77,11 @@ export default class BaseLogic {
     if (option.navtit) {
       this.setNav.navTit(option.navtit);
     }
-    this.data.user = await this.storage.getUser();
+    if (this.platform.platform == "mp") {
+      this.data.user = await this.storage.mpgetUser();
+    } else {
+      this.data.user = await this.storage.getUser();
+    }
     if (option.id) {
       this.param.id = option.id;
     }
@@ -95,7 +99,11 @@ export default class BaseLogic {
    * 生命周期-页面显示
    */
   async onBeingShow() {
-    this.data.user = await this.storage.getUser();
+    if (this.platform.platform == "mp") {
+      this.data.user = await this.storage.mpgetUser();
+    } else {
+      this.data.user = await this.storage.getUser();
+    }
   }
   /**
    * 生命周期-页面隐藏
