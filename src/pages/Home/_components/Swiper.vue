@@ -1,12 +1,6 @@
 <template>
   <div class="components" @click="onItems()">
-    <swiper
-      class="swiper"
-      :indicator-dots="false"
-      :autoplay="false"
-      interval="3000"
-      circular="true"
-    >
+    <swiper class="swiper" :indicator-dots="true" :autoplay="false" interval="3000" circular="true">
       <swiper-item>
         <view class="swiper-item">
           <img class="img-swiper" src="http://127.0.0.1:3000/img/banner/banner1.jpg" alt />

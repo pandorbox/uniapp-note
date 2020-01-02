@@ -7,7 +7,7 @@
       </div>
       <div class="list" v-if="tabIndex==indexs">
         <div class="item" v-for="(item,index) in items.list" :key="index">
-          <img class="item-img" :src="item.img" alt />
+          <image class="item-img" :src="item.img" mode="aspectFill" alt />
           <div class="text">
             <text class="text-tit" @click="onItem(item.id)">{{item.tit}}</text>
             <text class="text-msg" @click="onItem(item.id)">{{item.msg}}</text>

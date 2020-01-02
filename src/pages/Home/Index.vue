@@ -10,8 +10,8 @@
     <Swiper />
     <Notic />
     <Nav />
-    <Listone />
-    <Listtwo />
+    <Listone @item="emit($event,'onItem')" />
+    <Listtwo @item="emit($event,'onItem')" />
   </div>
 </template>
 <script lang="ts">

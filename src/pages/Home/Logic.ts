@@ -42,4 +42,7 @@ export default class Logic extends BaseLogic {
     await this.storage.removeUser();
     this.data.user = new User();
   }
+  async onItem() {
+    await this.page.openPage("noteDetail");
+  }
 }

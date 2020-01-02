@@ -2,7 +2,7 @@
   <div class="components">
     <div class="items">
       <div class="item" v-for="(item,index) in navs" :key="index">
-        <img class="nav-icon" src="../_static/nav.png" alt />
+        <image class="nav-icon" :src="item.icon" alt />
         <text class="nav-tit">{{item.tit}}</text>
       </div>
     </div>
@@ -22,12 +22,12 @@ export default {
   data() {
     return {
       navs: [
-        { icon: "../_static/notic.png", tit: "导航一" },
-        { icon: "../_static/notic.png", tit: "导航二" },
-        { icon: "../_static/notic.png", tit: "导航三" },
-        { icon: "../_static/notic.png", tit: "导航四" },
-        { icon: "../_static/notic.png", tit: "导航五" },
-        { icon: "../_static/notic.png", tit: "导航六" }
+        { icon: "../_static/nav-css.png", tit: "Css" },
+        { icon: "../_static/nav-html.png", tit: "Html" },
+        { icon: "../_static/nav-java.png", tit: "Java" },
+        { icon: "../_static/nav-vue.png", tit: "Vue" },
+        { icon: "../_static/nav-script.png", tit: "JavaScript" },
+        { icon: "../_static/nav-other.png", tit: "其他" }
       ]
     };
   },

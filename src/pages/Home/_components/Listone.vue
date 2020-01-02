@@ -4,8 +4,8 @@
       <text class="tab-tit-text">最新笔记</text>
     </div>
     <div class="list">
-      <div class="item" v-for="(item,index) in lists" :key="index">
-        <img class="item-img" :src="item.img" alt />
+      <div class="item" v-for="(item,index) in lists" :key="index" @click="onItem()">
+        <image class="item-img" :src="item.img" mode="aspectFill" alt />
         <div class="text">
           <text class="text-tit">{{item.tit}}</text>
           <text class="text-msg">{{item.msg}}</text>
