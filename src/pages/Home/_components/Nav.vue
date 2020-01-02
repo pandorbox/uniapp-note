@@ -22,12 +22,12 @@ export default {
   data() {
     return {
       navs: [
-        { icon: "../_static/nav-css.png", tit: "Css" },
-        { icon: "../_static/nav-html.png", tit: "Html" },
-        { icon: "../_static/nav-java.png", tit: "Java" },
-        { icon: "../_static/nav-vue.png", tit: "Vue" },
-        { icon: "../_static/nav-script.png", tit: "JavaScript" },
-        { icon: "../_static/nav-other.png", tit: "其他" }
+        { icon: require("../_static/nav-css.png"), tit: "Css" },
+        { icon: require("../_static/nav-html.png"), tit: "Html" },
+        { icon: require("../_static/nav-java.png"), tit: "Java" },
+        { icon: require("../_static/nav-vue.png"), tit: "Vue" },
+        { icon: require("../_static/nav-script.png"), tit: "JavaScript" },
+        { icon: require("../_static/nav-other.png"), tit: "其他" }
       ]
     };
   },
