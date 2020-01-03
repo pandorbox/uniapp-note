@@ -22,4 +22,23 @@ export default class toast {
       time ? time : 1000
     );
   }
+  /** 提示框
+   * @param tit 标题
+   * @param content 内容
+   * @param success 点击确定执行
+   * @param cancel 点击取消
+   */
+  async modal(tit: string, content: string, success?: any, cancel?: any) {
+    uni.showModal({
+      title: tit,
+      content: content,
+      success: function(res) {
+        if (res.confirm) {
+          console.log("用户点击确定");
+        } else if (res.cancel) {
+          console.log("用户点击取消");
+        }
+      }
+    });
+  }
 }

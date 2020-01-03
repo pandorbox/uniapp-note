@@ -1,10 +1,10 @@
 <template>
   <div class="components">
     <div class="bottom">
-      <div class="del">
+      <div class="del" @click="onDel()">
         <text>删除选中</text>
       </div>
-      <div class="del-all">
+      <div class="del-all" @click="onDelall()">
         <text>清空全部</text>
       </div>
     </div>
@@ -25,7 +25,11 @@ export default {
     return {};
   },
   mounted() {},
-  methods: {}
+  methods: {
+    onDel() {
+      this.$emit("del", {});
+    }
+  }
 };
 </script>
 <style lang="css" scoped>

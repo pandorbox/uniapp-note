@@ -1,7 +1,7 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <List />
-    <Bottom />
+    <List @chooseOne="emit($event,'onChooseOne')" @chooseTwo="emit($event,'onChooseTwo')" />
+    <Bottom @del="emit($event,'onDel')" />
   </div>
 </template>
 <script lang="ts">

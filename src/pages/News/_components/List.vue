@@ -89,10 +89,12 @@ export default {
     onOneChoose(index) {
       let bool = !this.chooseOne[index];
       this.chooseOne.splice(index, 1, bool);
+      this.$emit("chooseOne", { tab: this.tab, arr: this.chooseOne });
     },
     onTwoChoose(index) {
       let bool = !this.chooseTwo[index];
       this.chooseTwo.splice(index, 1, bool);
+      this.$emit("chooseTwo", { tab: this.tab, arr: this.chooseTwo });
     }
   }
 };
