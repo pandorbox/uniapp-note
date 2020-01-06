@@ -39,6 +39,12 @@ export default class Logic extends BaseLogic {
     this.data.tab = param.tab;
   }
   async onDel() {
-    this.toast.modal("提示", "确认删除选中项");
+    await this.toast.modal("提示", "确认删除选中项", this.doSure, this.doCancel);
+  }
+  async doSure() {
+    console.log("点击确定");
+  }
+  async doCancel() {
+    console.log("点击取消");
   }
 }

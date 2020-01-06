@@ -28,15 +28,15 @@ export default class toast {
    * @param success 点击确定执行
    * @param cancel 点击取消
    */
-  async modal(tit: string, content: string, success?: any, cancel?: any) {
-    uni.showModal({
+  async modal(tit: string, content: string, doSure?: any, doCancel?: any) {
+    await uni.showModal({
       title: tit,
       content: content,
-      success: function(res) {
-        if (res.confirm) {
-          console.log("用户点击确定");
-        } else if (res.cancel) {
-          console.log("用户点击取消");
+      success: async res => {
+        if (res.confirm && doSure) {
+          await doSure();
+        } else if (res.cancel && doCancel) {
+          await doCancel();
         }
       }
     });
