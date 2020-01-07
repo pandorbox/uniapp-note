@@ -34,17 +34,29 @@ export default class Logic extends BaseLogic {
     let res = await this.netData.getMyMsg();
   }
   async onChooseOne(param: any) {
-    console.log(param);
     this.data.chooseOne = param.arr;
     this.data.tab = param.tab;
   }
+  async onChooseTwo(param: any) {
+    this.data.chooseTwo = param.arr;
+    this.data.tab = param.tab;
+  }
   async onDel() {
-    await this.toast.modal("提示", "确认删除选中项", this.doSure, this.doCancel);
+    let choose = await this.toast.modal("提示", "确认删除选中项");
+    if (choose) {
+      await this.doSure();
+    }
+  }
+  async onDelAll() {
+    let choose = await this.toast.modal("提示", "确认清空全部");
+    if (choose) {
+      await this.doDelAll();
+    }
   }
   async doSure() {
-    console.log("点击确定");
+    console.log("tab:", this.data.tab, "chooseOne:", this.data.chooseOne, "chooseTwo:", this.data.chooseTwo);
   }
-  async doCancel() {
-    console.log("点击取消");
+  async doDelAll() {
+    console.log("tab:", this.data.tab, "chooseOne:", this.data.chooseOne, "chooseTwo:", this.data.chooseTwo);
   }
 }

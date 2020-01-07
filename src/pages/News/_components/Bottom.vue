@@ -28,6 +28,9 @@ export default {
   methods: {
     onDel() {
       this.$emit("del", {});
+    },
+    onDelall() {
+      this.$emit("delall", {});
     }
   }
 };

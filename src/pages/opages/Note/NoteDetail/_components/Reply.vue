@@ -3,10 +3,10 @@
     <div class="masks" @click="close()"></div>
     <div class="reply">
       <div class="text-input">
-        <textarea class="input" name id></textarea>
+        <textarea class="input" @input="onInput($event,{type:'reply'})"></textarea>
       </div>
       <div class="btn">
-        <text class="submit">发表</text>
+        <text class="submit" :class="reply!==''?'asubmit':''">发表</text>
       </div>
     </div>
   </div>
@@ -23,7 +23,9 @@ export default {
   },
   name: "Masks",
   data() {
-    return {};
+    return {
+      reply: ""
+    };
   },
   mounted() {},
   methods: {
@@ -32,6 +34,10 @@ export default {
     },
     close() {
       this.$emit("close", {});
+    },
+    onInput(e, field) {
+      this.reply = e.target.value;
+      this.$emit("onInput", this.reply);
     }
   }
 };
@@ -93,5 +99,9 @@ export default {
   font-size: 25px;
   border-radius: 20px;
   color: #666;
+}
+.asubmit {
+  background-color: rgb(20, 182, 60);
+  color: #ffffff;
 }
 </style>
