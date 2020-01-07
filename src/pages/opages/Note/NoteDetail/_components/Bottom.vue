@@ -66,6 +66,7 @@ export default {
   align-items: center;
   border-top: 1px solid #ccc;
   justify-content: space-between;
+  background-color: #ffffff;
 }
 .input-box {
   width: 300px;

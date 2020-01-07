@@ -3,7 +3,7 @@
     <div class="tit">
       <text>评论</text>
       <div class="list">
-        <div class="item">
+        <div class="item" v-for="(item,index) in 5" :key="index">
           <img class="photo" src="../_static/def.png" alt />
           <div class="text">
             <text class="name">qjkang</text>
