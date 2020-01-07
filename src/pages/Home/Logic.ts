@@ -45,4 +45,7 @@ export default class Logic extends BaseLogic {
   async onItem() {
     await this.page.openPage("noteDetail");
   }
+  async onNav(param: any) {
+    await this.page.openPage("noteClassList", { navtit: param });
+  }
 }

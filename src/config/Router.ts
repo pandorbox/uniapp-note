@@ -34,5 +34,9 @@ export default {
   noteDetail: {
     url: "pages/opages/Note/NoteDetail/Index",
     tit: "笔记详情"
+  },
+  noteClassList: {
+    url: "pages/opages/Note/NoteClassList/Index",
+    tit: ""
   }
 };

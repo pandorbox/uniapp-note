@@ -9,7 +9,7 @@
     />
     <Swiper />
     <Notic />
-    <Nav />
+    <Nav @item="emit($event,'onNav')" />
     <Listone @item="emit($event,'onItem')" />
     <Listtwo @item="emit($event,'onItem')" />
   </div>

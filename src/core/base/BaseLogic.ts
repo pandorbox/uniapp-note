@@ -9,6 +9,8 @@ import Platform from "../utils/Platform";
 
 export class Param extends LParam {}
 export class Data {
+  /** options */
+  options: Object;
   /** 数据组 */
   items: Array<any>;
   /** 登录 */
@@ -19,6 +21,7 @@ export class Data {
     this.items = [];
     this.needLogin = false;
     this.user = new UserInfo();
+    this.options = {};
   }
 }
 /**
@@ -74,6 +77,7 @@ export default class BaseLogic {
    * @param options 参数
    */
   async onBeingLoadOptions(option: any) {
+    this.data.options = option;
     if (option.navtit) {
       this.setNav.navTit(option.navtit);
     }

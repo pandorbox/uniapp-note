@@ -1,7 +1,7 @@
 <template>
   <div class="components">
     <div class="items">
-      <div class="item" v-for="(item,index) in navs" :key="index">
+      <div class="item" v-for="(item,index) in navs" :key="index" @click="onItem(item.tit)">
         <image class="nav-icon" :src="item.icon" alt />
         <text class="nav-tit">{{item.tit}}</text>
       </div>
@@ -33,8 +33,8 @@ export default {
   },
   mounted() {},
   methods: {
-    onItem() {
-      this.$emit("item", {});
+    onItem(type) {
+      this.$emit("item", type);
     }
   }
 };
