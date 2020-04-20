@@ -1,4 +1,4 @@
-import BaseNetData, { NData, NParam } from "@/core/base/BaseNData";
+import BaseNetData, { NData, NParam } from "@qjk/npm-pack/dist/core/base/BaseNData";
 import item from "@/core/item/test";
 export class Typeitem {
   value1: string;

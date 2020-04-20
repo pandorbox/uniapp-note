@@ -1,4 +1,4 @@
-import BaseLogic, { Data as BaseData } from "@/core/base/BaseLogic";
+import BaseLogic, { Data as BaseData } from "@qjk/npm-pack/dist/core/base/BaseLogic";
 import NetData from "./NData";
 
 export class Data extends BaseData {

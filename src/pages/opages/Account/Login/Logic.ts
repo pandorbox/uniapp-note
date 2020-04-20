@@ -1,4 +1,4 @@
-import BaseLogic, { Data as BaseData } from "@/core/base/BaseLogic";
+import BaseLogic, { Data as BaseData } from "@qjk/npm-pack/dist/core/base/BaseLogic";
 import NetData from "./NData";
 import UserInfo from "@/core/item/userInfo";
 import User from "@/core/item/userInfo";
