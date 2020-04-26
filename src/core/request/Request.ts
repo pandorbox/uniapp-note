@@ -1,4 +1,6 @@
 import Vue from "vue";
+import SingleConfig from "../config/SingleConfig";
+
 /**
  * 请求
  * @param  apiObject api对象
@@ -7,11 +9,12 @@ import Vue from "vue";
 export class Request {
   async Api(apiObject: any, callback: any) {
     /** 服务器地址 */
-    const baseUrl = "http://127.0.0.1:3000/";
+    const { System } = SingleConfig.Instance;
+    const baseUrl = System.request._apiDomain + "/";
     uni.showLoading({
       title: "加载中"
     });
-    console.log("发起请求:", apiObject.url, "参数：", apiObject.param, "方法：", apiObject.method);
+    console.log("发起请求:", baseUrl + apiObject.url, "参数：", apiObject.param, "方法：", apiObject.method);
     await uni.request({
       url: baseUrl + apiObject.url,
       method: apiObject.method,

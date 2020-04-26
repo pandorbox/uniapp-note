@@ -6,6 +6,7 @@ import UserInfo from "../item/userInfo";
 import Toast from "../utils/Toast";
 import SetTitle from "../utils/SetNavtit";
 import Platform from "../utils/Platform";
+import Router from "../utils/Route";
 
 export class Param extends LParam {}
 export class Data {
@@ -41,6 +42,8 @@ export default class BaseLogic {
   setNav: SetTitle;
   /** 平台 */
   platform: Platform;
+  /** 路由 */
+  router: Router;
   constructor() {
     this.param = new Param();
     this.data = new Data();
@@ -50,6 +53,7 @@ export default class BaseLogic {
     this.toast = new Toast();
     this.setNav = new SetTitle();
     this.platform = new Platform();
+    this.router = new Router();
   }
   /**
    * 刷新视图
