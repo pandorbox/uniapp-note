@@ -1,4 +1,4 @@
-import Request from "../core/request/RequestConfig";
+import Request from "@qjk/npm-pack/dist/core/request/RequestConfig";
 
 /**
  * 站点

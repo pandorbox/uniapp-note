@@ -15,28 +15,24 @@ export default {
     url: "pages/Me/Index",
     tit: "我的"
   },
-  pageOne: {
-    url: "pages/opages/One/Index",
-    tit: "分页一"
-  },
   login: {
-    url: "pages/opages/Account/Login/Index",
+    url: "pkgAccount/pages/Login/Index",
     tit: "登录"
   },
   registe: {
-    url: "pages/opages/Account/Registe/Index",
+    url: "pkgAccount/pages/Registe/Index",
     tit: "注册"
   },
   addNote: {
-    url: "pages/opages/Note/AddNote/Index",
+    url: "pkgNote/pages/AddNote/Index",
     tit: "新增笔记"
   },
   noteDetail: {
-    url: "pages/opages/Note/NoteDetail/Index",
+    url: "pkgNote/pages/NoteDetail/Index",
     tit: "笔记详情"
   },
   noteClassList: {
-    url: "pages/opages/Note/NoteClassList/Index",
+    url: "pkgNote/pages/NoteClassList/Index",
     tit: ""
   }
 };

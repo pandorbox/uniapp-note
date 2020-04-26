@@ -1,5 +1,5 @@
 import Router from "./Router";
-import CoreSingleConfig from "../core/config/SingleConfig";
+import CoreSingleConfig from "@qjk/npm-pack/dist/core/config/SingleConfig";
 import Site from "./Sites";
 export default class Config {
   constructor() {

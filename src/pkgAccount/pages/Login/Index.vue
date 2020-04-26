@@ -1,17 +1,19 @@
 <template>
-  <div class="pages" v-if="data !== ''">
-    <Test :items="logic.data.needLogin" @item="emit($event,'onItem')" />
+  <div class="components" v-if="data !== ''">
+    <Form @onInput="emit($event,'onInput')" />
+    <Submit @submit="emit($event,'onSubmit')" />
   </div>
 </template>
 <script lang="ts">
-import Test from "./_components/test.vue";
+import Form from "./_components/Form.vue";
+import Submit from "./_components/Submit.vue";
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import DData from "./Data";
 import NData, { Param, Data } from "./NData";
 import Logic from "./Logic";
-import BaseVue from "@/core/base/BaseVue";
+import BaseVue from "@qjk/npm-pack/dist/core/base/BaseVue";
 @Component({
-  components: { Test }
+  components: { Form, Submit }
 })
 export default class Index extends Mixins(BaseVue) {
   logic = new Logic();
@@ -23,10 +25,13 @@ export default class Index extends Mixins(BaseVue) {
 }
 </script>
 <style lang="css" scoped>
-.pages {
+.components {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 750px;
+}
+page {
+  background-color: rgb(181, 136, 211);
 }
 </style>

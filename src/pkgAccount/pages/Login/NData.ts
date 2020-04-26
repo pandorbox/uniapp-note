@@ -1,5 +1,5 @@
 import BaseNetData, { NData, NParam } from "@qjk/npm-pack/dist/core/base/BaseNData";
-import UserInfo from "@/core/item/userInfo";
+import UserInfo from "@qjk/npm-pack/dist/core/item/userInfo";
 
 export class Param extends NParam {
   constructor() {

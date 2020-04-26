@@ -858,10 +858,10 @@
   resolved "https://registry.npm.taobao.org/@nodelib/fs.stat/download/@nodelib/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
 
-"@qjk/npm-pack@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@qjk/npm-pack/-/npm-pack-0.1.5.tgz#dcbd822f4ec22c6aa06ae4900dacf54db5455963"
-  integrity sha512-cUL3gcVe6iI8OcwyAEmsoOyJDDpyDA338Cqkk/yrqfQ1jyCeZDpABExMV45kui6NcAM9GpiVpVAL+1N4q9DExw==
+"@qjk/npm-pack@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@qjk/npm-pack/-/npm-pack-0.1.6.tgz#8c7445c120cbe1c9e9eb0115b3ce973c1ac871b9"
+  integrity sha512-hRNZQ3RDyzUq2ZuDS34m3MIIRFYzixdvQoqwxBrhqrfOG2x9rtTxOY3QXzocbm2cD7Dr9GgNSJw/Nv8eVxlbzQ==
   dependencies:
     "@dcloudio/uni-app-plus" "^2.0.0-24220191115006"
     "@dcloudio/uni-h5" "^2.0.0-24220191115006"

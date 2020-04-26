@@ -1,20 +1,23 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Form @onInput="emit($event,'onInput')" />
-    <Submit @submit="emit($event,'onSubmit')" />
+    <Detail :items="logic.data.needLogin" @item="emit($event,'onItem')" />
+    <Evaluate />
+    <Bottom @reply="emit($event,'onReply')" />
+    <Reply v-if="logic.data.reply" @close="emit($event,'onClose')" />
   </div>
 </template>
 <script lang="ts">
-import Form from "./_components/Form.vue";
-import Submit from "./_components/Submit.vue";
-
+import Detail from "./_components/Detail.vue";
+import Evaluate from "./_components/Evaluate.vue";
+import Bottom from "./_components/Bottom.vue";
+import Reply from "./_components/Reply.vue";
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import DData from "./Data";
 import NData, { Param, Data } from "./NData";
 import Logic from "./Logic";
-import BaseVue from "@/core/base/BaseVue";
+import BaseVue from "@qjk/npm-pack/dist/core/base/BaseVue";
 @Component({
-  components: { Form, Submit }
+  components: { Detail, Evaluate, Bottom, Reply }
 })
 export default class Index extends Mixins(BaseVue) {
   logic = new Logic();
@@ -31,8 +34,5 @@ export default class Index extends Mixins(BaseVue) {
   flex-direction: column;
   align-items: center;
   width: 750px;
-}
-page {
-  background-color: rgb(181, 136, 211);
 }
 </style>

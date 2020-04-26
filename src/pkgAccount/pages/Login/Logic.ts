@@ -1,7 +1,7 @@
 import BaseLogic, { Data as BaseData } from "@qjk/npm-pack/dist/core/base/BaseLogic";
 import NetData from "./NData";
-import UserInfo from "@/core/item/userInfo";
-import User from "@/core/item/userInfo";
+import UserInfo from "@qjk/npm-pack/dist/core/item/userInfo";
+import User from "@qjk/npm-pack/dist/core/item/userInfo";
 
 export class Data extends BaseData {
   /** 登录账号 */

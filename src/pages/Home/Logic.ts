@@ -1,6 +1,6 @@
 import BaseLogic, { Data as BaseData } from "@qjk/npm-pack/dist/core/base/BaseLogic";
 import NetData from "./NData";
-import User from "@/core/item/userInfo";
+import User from "@qjk/npm-pack/dist/core/item/userInfo";
 
 export class Data extends BaseData {
   /** web */
@@ -30,22 +30,22 @@ export default class Logic extends BaseLogic {
   }
   // 页面跳转
   async onTurn() {
-    await this.page.openPage("pageOne");
+    await this.router.openPage("pageOne");
   }
   async onLogin() {
-    await this.page.openPage("login");
+    await this.router.openPage("login");
   }
   async onRegiste() {
-    await this.page.openPage("registe");
+    await this.router.openPage("registe");
   }
   async onOut() {
     await this.storage.removeUser();
     this.data.user = new User();
   }
   async onItem() {
-    await this.page.openPage("noteDetail");
+    await this.router.openPage("noteDetail");
   }
   async onNav(param: any) {
-    await this.page.openPage("noteClassList", { navtit: param });
+    await this.router.openPage("noteClassList", { navtit: param });
   }
 }

@@ -11,7 +11,7 @@ import { Vue, Component, Mixins } from "vue-property-decorator";
 import DData from "./Data";
 import NData, { Param, Data } from "./NData";
 import Logic from "./Logic";
-import BaseVue from "@/core/base/BaseVue";
+import BaseVue from "@qjk/npm-pack/dist/core/base/BaseVue";
 @Component({
   components: { Test, Cell }
 })
