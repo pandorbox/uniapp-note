@@ -17,9 +17,10 @@ import BaseVue from "@qjk/npm-pack/dist/core/base/BaseVue";
   components: { Form, Submit }
 })
 export default class Index extends Mixins(BaseVue) {
-  logic = new Logic();
   Data = Data;
-  async mounted() {
+  logic: any;
+  async beforeCreate() {
+    this.logic = new Logic();
     await this.logic.onBeingCreated();
     this.data = this.logic.data.items[0];
   }
