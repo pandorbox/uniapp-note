@@ -29,30 +29,18 @@ export default class NetData extends BaseNetData<Param> {
    * @param param  account:账号 password:密码
    */
   async login(param: { account: string; password: string }) {
-    const res = await this.call.Api(
+    const res = await this.request.call(
       this.api.Account.login({
         username: param.account,
         userpwd: param.password
       })
     );
-    return res;
-  }
-  /** 获取用户信息 */
-  async getUser(username: string) {
-    const res = await this.call.Api(
-      this.api.Account.userMsg({
-        username: username
-      })
-    );
     return this.covUser(res);
   }
   covUser(res: any): UserInfo {
-    let data: Array<UserInfo> = [];
     let item = new UserInfo();
-    res.forEach((ritem: any) => {
-      (item.name = ritem.username), (item.photo = ritem.userimg);
-      data.push(item);
-    });
-    return data[0];
+    item.name = res.userName;
+    item.photo = res.userPhoto;
+    return item;
   }
 }

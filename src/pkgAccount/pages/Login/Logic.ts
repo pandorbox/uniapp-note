@@ -1,18 +1,19 @@
 import BaseLogic, { Data as BaseData } from "@qjk/npm-pack/dist/core/base/BaseLogic";
 import NetData from "./NData";
-import UserInfo from "@qjk/npm-pack/dist/core/item/userInfo";
-import User from "@qjk/npm-pack/dist/core/item/userInfo";
 
 export class Data extends BaseData {
   /** 登录账号 */
   account: string;
   /** 登录密码 */
   password: string;
+  /** text */
+  text: any;
   constructor() {
     super();
     this.needLogin = true;
     this.account = "";
     this.password = "";
+    this.text = "text";
   }
 }
 
@@ -27,7 +28,7 @@ export default class Logic extends BaseLogic {
   }
   async onBeingCreated() {
     await this.netData.getNetData(this.param);
-    await this.refreshData(this.netData.data);
+    await this.refreshData();
   }
   /** input输入事件 */
   async onInput(form: any) {
@@ -36,30 +37,25 @@ export default class Logic extends BaseLogic {
   }
   /** 登录提交 */
   async onSubmit() {
-    let res: any;
-    res = await this.netData.login({
+    const res = await this.netData.login({
       account: this.data.account,
       password: this.data.password
     });
-    if (res !== 1) {
-      await this.toast.open(res.msg, "none");
-      await this.toast.close(500);
+    if (!res) return;
+    if (this.platform.platform == "mp") {
+      await this.storage.mpremoveUser();
+      await this.storage.mpsetUser(res);
     } else {
-      let userinfo = await this.netData.getUser(this.data.account);
-      console.log("userInfo:", userinfo);
-      if (this.platform.platform == "mp") {
-        await this.storage.mpremoveUser();
-        await this.storage.mpsetUser(userinfo);
-      } else {
-        await this.storage.removeUser();
-        await this.storage.setUser(userinfo);
-      }
-      await this.toast.open("登录成功", "success");
-      let that = this;
-      let openpage = function() {
-        that.page.openTab("tab_Home");
-      };
-      setTimeout(openpage, 600);
+      await this.storage.removeUser();
+      await this.storage.setUser(res);
     }
+    this.data.text = res.name;
+    await this.refreshData();
+    await this.toast.open("登录成功", "success");
+    let that = this;
+    let openpage = function() {
+      that.router.openTab("tab_Home");
+    };
+    setTimeout(openpage, 600);
   }
 }

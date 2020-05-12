@@ -2,6 +2,7 @@
   <div class="components" v-if="data !== ''">
     <Form @onInput="emit($event,'onInput')" />
     <Submit @submit="emit($event,'onSubmit')" />
+    <div>{{data.text}}</div>
   </div>
 </template>
 <script lang="ts">
@@ -20,7 +21,7 @@ export default class Index extends Mixins(BaseVue) {
   Data = Data;
   async mounted() {
     await this.logic.onBeingCreated();
-    this.data = this.logic.data.items[0];
+    this.data = this.logic.data;
   }
 }
 </script>

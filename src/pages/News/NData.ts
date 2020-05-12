@@ -31,13 +31,13 @@ export default class NetData extends BaseNetData<Param> {
     super();
   }
   async getNetData(param: NParam, logTag?: string): Promise<Data> {
-    const res = await this.call.Api(this.api.Account.login({ username: "qjkang", userpwd: "123" }));
+    const res = await this.request.call(this.api.Account.login({ username: "qjkang", userpwd: "123" }));
     this.data.items = res;
     return this.data;
   }
   /** 获取我的信息 */
   async getMyMsg() {
-    const res = await this.call.Api(this.api.Kecheng.getNoticList());
+    const res = await this.request.call(this.api.Account.userMsg({ username: "" }));
     this.data.getMsg = this.covitem(res);
   }
   /** 我的信息数据转换 */

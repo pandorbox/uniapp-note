@@ -31,7 +31,7 @@ export default class NetData extends BaseNetData<Param> {
     super();
   }
   async getNetData(param: NParam, logTag?: string): Promise<Data> {
-    const res = await this.call.Api(this.api.Account.login({ username: "qjkang", userpwd: "123" }));
+    const res = await this.request.call(this.api.Account.login({ username: "qjkang", userpwd: "123" }));
     this.data.items = res;
     return this.data;
   }
@@ -40,7 +40,7 @@ export default class NetData extends BaseNetData<Param> {
    * @param param  account:账号 password:密码
    */
   async register(param: { account: string; password: string }) {
-    const res = this.call.Api(
+    const res = this.request.call(
       this.api.Account.register({
         username: param.account,
         userpwd: param.password

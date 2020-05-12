@@ -25,6 +25,6 @@ export default class Logic extends BaseLogic {
   }
   /** 事件 */
   async onItem() {
-    await this.page.openPage("noteDetail");
+    await this.router.openPage("noteDetail");
   }
 }

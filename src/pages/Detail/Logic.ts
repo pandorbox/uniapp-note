@@ -23,13 +23,12 @@ export default class Logic extends BaseLogic {
   }
   /** 跳转到新增笔记 */
   async onAdd() {
-    console.log(this.page);
-
-    await this.page.openPage("addNote");
+    console.log();
+    await this.router.openPage("addNote");
   }
   /** 点击item  */
   async onItems(param: any) {
     let id = param.id;
-    await this.page.openPage("noteDetail", { id: id });
+    await this.router.openPage("noteDetail", { id: id });
   }
 }

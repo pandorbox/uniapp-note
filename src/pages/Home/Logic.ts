@@ -26,7 +26,8 @@ export default class Logic extends BaseLogic {
       this.data.web = true;
     }
     await this.netData.getNetData(this.param);
-    await this.refreshData(this.netData.data);
+    await this.refreshData();
+    console.log(this.data);
   }
   // 页面跳转
   async onTurn() {

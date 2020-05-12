@@ -55,7 +55,7 @@ export default class Logic extends BaseLogic {
     await this.toast.open("注册成功");
     let that = this;
     let openpage = function() {
-      that.page.closeOpen("login");
+      that.router.backPage(1);
     };
     setTimeout(openpage, 600);
     // this.closeOpen("login");
