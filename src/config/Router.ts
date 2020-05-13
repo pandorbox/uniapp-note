@@ -15,23 +15,23 @@ export default {
     url: "pages/Me/Index",
     tit: "我的"
   },
-  login: {
+  pkgAccount_login: {
     url: "pkgAccount/pages/Login/Index",
     tit: "登录"
   },
-  registe: {
+  pkgAccount_registe: {
     url: "pkgAccount/pages/Registe/Index",
     tit: "注册"
   },
-  addNote: {
+  pkgNote_addNote: {
     url: "pkgNote/pages/AddNote/Index",
     tit: "新增笔记"
   },
-  noteDetail: {
+  pkgNote_noteDetail: {
     url: "pkgNote/pages/NoteDetail/Index",
     tit: "笔记详情"
   },
-  noteClassList: {
+  pkgNote_noteClassList: {
     url: "pkgNote/pages/NoteClassList/Index",
     tit: ""
   }

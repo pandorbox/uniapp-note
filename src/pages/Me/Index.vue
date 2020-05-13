@@ -1,6 +1,6 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Test :user="logic.data.user" @item="emit($event,'onItem')" />
+    <Test :user="Ldata.user" @item="emit($event,'onItem')" />
     <Cell />
   </div>
 </template>
@@ -20,7 +20,8 @@ export default class Index extends Mixins(BaseVue) {
   Data = Data;
   async mounted() {
     await this.logic.onBeingCreated();
-    this.data = this.logic.data.items[0];
+    this.Ldata = this.logic.data;
+    this.Ndata = Data;
   }
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Detail :items="logic.data.needLogin" @item="emit($event,'onItem')" />
+    <Detail :items="Ldata.needLogin" @item="emit($event,'onItem')" />
     <Evaluate />
     <Bottom @reply="emit($event,'onReply')" />
-    <Reply v-if="logic.data.reply" @close="emit($event,'onClose')" />
+    <Reply v-if="Ldata.reply" @close="emit($event,'onClose')" />
   </div>
 </template>
 <script lang="ts">
@@ -24,7 +24,8 @@ export default class Index extends Mixins(BaseVue) {
   Data = Data;
   async mounted() {
     await this.logic.onBeingCreated();
-    this.data = this.logic.data.items[0];
+    this.Ldata = this.logic.data;
+    this.Ndata = Data;
   }
 }
 </script>

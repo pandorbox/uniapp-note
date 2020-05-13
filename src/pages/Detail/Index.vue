@@ -21,7 +21,8 @@ export default class Index extends Mixins(BaseVue) {
   Data = Data;
   async mounted() {
     await this.logic.onBeingCreated();
-    this.data = this.logic.data.items[0];
+    this.Ldata = this.logic.data;
+    this.Ndata = Data;
   }
 }
 </script>

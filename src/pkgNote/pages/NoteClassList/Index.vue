@@ -1,6 +1,6 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <List @item="emit($event,'onItem')" :listType="logic.data.options.type" />
+    <List @item="emit($event,'onItem')" :listType="Ldata.options.type" />
   </div>
 </template>
 <script lang="ts">
@@ -18,7 +18,8 @@ export default class Index extends Mixins(BaseVue) {
   Data = Data;
   async mounted() {
     await this.logic.onBeingCreated();
-    this.data = this.logic.data.items[0];
+    this.Ldata = this.logic.data;
+    this.Ndata = Data;
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Form :items="logic.data.user" />
+    <Form :items="Ldata.user" />
     <Submit />
   </div>
 </template>
@@ -22,7 +22,8 @@ export default class Index extends Mixins(BaseVue) {
   async beforeCreate() {
     this.logic = new Logic();
     await this.logic.onBeingCreated();
-    this.data = this.logic.data.items[0];
+    this.Ldata = this.logic.data;
+    this.Ndata = Data;
   }
 }
 </script>

@@ -2,10 +2,10 @@
   <div class="page" v-if="data !== ''">
     <Head
       @login="emit($event,'onLogin')"
-      :user="logic.data.user"
+      :user="Ldata.user"
       @registe="emit($event,'onRegiste')"
       @out="emit($event,'onOut')"
-      :web="logic.data.web"
+      :web="Ldata.web"
     />
     <Swiper />
     <Notic />
@@ -35,7 +35,8 @@ export default class Index extends Mixins(BaseVue) {
   Data = Data;
   async mounted() {
     await this.logic.onBeingCreated();
-    this.data = this.logic.data.items[0];
+    this.Ldata = this.logic.data;
+    this.Ndata = Data;
   }
 }
 </script>

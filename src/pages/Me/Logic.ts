@@ -23,6 +23,9 @@ export default class Logic extends BaseLogic {
   }
   async onItem(param: any) {
     let user = await this.storage.mpgetUser();
-    console.log(user);
+    if (this.data.user.name) return;
+    let res = await this.toast.modal("提示", "是否去登录");
+    if (!res) return;
+    this.router.openPage("pkgAccount_login");
   }
 }
