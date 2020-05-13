@@ -1,6 +1,6 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Form :items="Ldata.user" />
+    <Form :items="Ldata.items" />
     <Submit />
   </div>
 </template>

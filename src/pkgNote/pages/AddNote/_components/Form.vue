@@ -6,10 +6,10 @@
         <div
           class="type-item"
           :class="index==typeIndex?'ontype':''"
-          v-for="(item,index) in types"
+          v-for="(item,index) in items"
           :key="index"
           @click="onType(index)"
-        >{{item}}</div>
+        >{{item.typeName}}</div>
       </div>
     </div>
     <div class="row">
@@ -30,16 +30,15 @@
 export default {
   props: {
     items: {
-      type: Object,
+      type: Array,
       default: () => {
-        return {};
+        return [];
       }
     }
   },
   name: "Form",
   data() {
     return {
-      types: ["Css", "JavaScript", "Html", "Vue", "Uni-app", "TypeScript"],
       typeIndex: 100
     };
   },

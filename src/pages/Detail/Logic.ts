@@ -24,7 +24,7 @@ export default class Logic extends BaseLogic {
   /** 跳转到新增笔记 */
   async onAdd() {
     console.log();
-    await this.router.openPage("addNote");
+    await this.router.openPage("pkgNote_addNote");
   }
   /** 点击item  */
   async onItems(param: any) {

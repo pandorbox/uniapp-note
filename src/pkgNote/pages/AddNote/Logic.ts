@@ -8,7 +8,7 @@ export class Data extends BaseData {
 }
 
 /**
- * 逻辑
+ * 添加笔记
  */
 export default class Logic extends BaseLogic {
   data = new Data();
@@ -18,10 +18,7 @@ export default class Logic extends BaseLogic {
   }
   async onBeingCreated() {
     await this.netData.getNetData(this.param);
-    await this.refreshData(this.netData.data);
-  }
-  /** 事件 */
-  async onItem(param: any) {
-    let res = await this.netData.getMyMsg();
+    this.data.items = this.netData.data.items;
+    await this.refreshData();
   }
 }
