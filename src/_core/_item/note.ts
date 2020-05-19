@@ -1,27 +1,9 @@
 /**
- * 账号
+ * 笔记
  */
-export default class note {
-  /** 获取笔记类型 */
-  getNoteType() {
-    return {
-      name: "获取笔记类型",
-      method: "GET",
-      url: "user/getNoteType",
-      param: {}
-    };
-  }
-  /** 添加笔记 */
-  addNote(param: pAddNote) {
-    return {
-      name: "添加笔记",
-      method: "POST",
-      url: "user/addnote",
-      param: param
-    };
-  }
-}
-export class pAddNote {
+export default class Note {
+  /** 笔记id */
+  noteId: number;
   /** 作者id */
   userId: number;
   /** 作者头像 */
@@ -45,6 +27,7 @@ export class pAddNote {
   /** 笔记备注 hot:热门 today:今日推荐 */
   noteRemarks: "hot" | "today" | "";
   constructor() {
+    this.noteId = 0;
     this.userId = 0;
     this.userPhoto = "";
     this.userNickName = "";

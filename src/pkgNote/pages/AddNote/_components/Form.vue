@@ -14,15 +14,22 @@
     </div>
     <div class="row">
       <text class="row-tit">标题</text>
-      <input class="row-input" type=" text" />
+      <input class="row-input" type=" text" @input="onInput($event,{type:'title'})" />
     </div>
     <div class="row">
       <text class="row-tit">内容（说明）</text>
-      <input class="row-input" type=" text" />
+      <input class="row-input" type=" text" @input="onInput($event,{type:'describes'})" />
     </div>
     <div class="row">
       <text class="row-tit">代码</text>
-      <textarea class="row-textarea" name id cols="30" rows="10"></textarea>
+      <textarea
+        class="row-textarea"
+        name
+        id
+        cols="30"
+        rows="10"
+        @input="onInput($event,{type:'content'})"
+      ></textarea>
     </div>
   </div>
 </template>
@@ -49,6 +56,14 @@ export default {
     },
     onType(index) {
       this.typeIndex = index;
+      this.$emit("type", { index: index });
+    },
+    onInput(e, field) {
+      let value = "";
+      let type = "";
+      value = e.target.value;
+      type = field.type;
+      this.$emit("input", { type: type, value: value });
     }
   }
 };

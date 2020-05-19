@@ -1,7 +1,7 @@
 <template>
   <div class="components" v-if="data !== ''">
-    <Form :items="Ldata.items" />
-    <Submit />
+    <Form :items="Ldata.items" @type="emit($event,'onType')" @input="emit($event,'onInput')" />
+    <Submit @add="emit($event,'onAdd')" @addPush="emit($event,'onAddPush')" />
   </div>
 </template>
 <script lang="ts">

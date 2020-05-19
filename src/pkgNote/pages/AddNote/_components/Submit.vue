@@ -1,8 +1,8 @@
 <template>
   <div class="components">
     <div class="btn">
-      <div class="btn-one">添加并发布</div>
-      <div class="btn-two">添加</div>
+      <div class="btn-one" @click="onAddPush">添加并发布</div>
+      <div class="btn-two" @click="onAdd">添加</div>
     </div>
   </div>
 </template>
@@ -24,6 +24,12 @@ export default {
   methods: {
     onItem() {
       this.$emit("item", {});
+    },
+    onAddPush() {
+      this.$emit("addPush", {});
+    },
+    onAdd() {
+      this.$emit("add", {});
     }
   }
 };
