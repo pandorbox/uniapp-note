@@ -34,10 +34,10 @@ export default class Logic extends BaseLogic {
     await this.router.openPage("pageOne");
   }
   async onLogin() {
-    await this.router.openPage("login");
+    await this.router.openPage("pkgAccount_login");
   }
   async onRegiste() {
-    await this.router.openPage("registe");
+    await this.router.openPage("pkgAccount_registe");
   }
   async onOut() {
     await this.storage.removeUser();

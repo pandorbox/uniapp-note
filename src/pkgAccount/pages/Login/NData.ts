@@ -35,6 +35,7 @@ export default class NetData extends BaseNetData<Param> {
         userpwd: param.password
       })
     );
+    if (res.code !== 200) return false;
     return this.covUser(res);
   }
   covUser(res: any): UserInfo {

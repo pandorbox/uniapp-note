@@ -20,6 +20,15 @@ export default class note {
       param: param
     };
   }
+  /** 获取我的笔记 */
+  getMyNoteList() {
+    return {
+      name: "获取我的笔记",
+      method: "GET",
+      url: "user/getMyNoteList",
+      param: {}
+    };
+  }
 }
 export class pAddNote {
   /** 作者id */
