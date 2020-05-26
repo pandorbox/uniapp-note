@@ -10,7 +10,7 @@ export class Data extends BaseData {
   passwords: string;
   constructor() {
     super();
-    this.needLogin = true;
+    this.needLogin = false;
     this.account = "";
     this.password = "";
     this.passwords = "";
@@ -55,7 +55,7 @@ export default class Logic extends BaseLogic {
     await this.toast.open("注册成功");
     let that = this;
     let openpage = function() {
-      that.router.backPage(1);
+      that.router.openPage("pkgAccount_login");
     };
     setTimeout(openpage, 600);
     // this.closeOpen("login");

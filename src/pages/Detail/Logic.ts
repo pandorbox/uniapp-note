@@ -19,7 +19,6 @@ export default class Logic extends BaseLogic {
   }
   async onBeingCreated() {
     await this.netData.getNetData(this.param);
-    await this.refreshData(this.netData.data);
   }
   /** 跳转到新增笔记 */
   async onAdd() {
@@ -30,5 +29,9 @@ export default class Logic extends BaseLogic {
   async onItems(param: any) {
     let id = param.id;
     await this.router.openPage("noteDetail", { id: id });
+  }
+  async onBeingShow() {
+    await this.onBeingCreated();
+    this.refreshData();
   }
 }

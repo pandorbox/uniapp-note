@@ -21,11 +21,5 @@ export default class Logic extends BaseLogic {
     await this.netData.getNetData(this.param);
     await this.refreshData(this.netData.data);
   }
-  async onItem(param: any) {
-    let user = await this.storage.mpgetUser();
-    if (this.data.user.name) return;
-    let res = await this.toast.modal("提示", "是否去登录");
-    if (!res) return;
-    this.router.openPage("pkgAccount_login");
-  }
+  async onItem(param: any) {}
 }

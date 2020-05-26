@@ -1,5 +1,5 @@
 import BaseNetData, { NData, NParam } from "@qjk/npm-pack/dist/core/base/BaseNData";
-import UserInfo from "@qjk/npm-pack/dist/core/item/userInfo";
+import UserInfo from "@qjk/npm-pack/dist/core/item/accountInfo";
 
 export class Param extends NParam {
   constructor() {
@@ -35,13 +35,15 @@ export default class NetData extends BaseNetData<Param> {
         userpwd: param.password
       })
     );
-    if (res.code !== 200) return false;
+    if (!res) return false;
     return this.covUser(res);
   }
   covUser(res: any): UserInfo {
     let item = new UserInfo();
     item.name = res.userName;
+    item.password = res.userPwd;
     item.photo = res.userPhoto;
+    item.token = res.token;
     return item;
   }
 }

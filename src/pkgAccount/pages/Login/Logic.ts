@@ -6,14 +6,11 @@ export class Data extends BaseData {
   account: string;
   /** 登录密码 */
   password: string;
-  /** text */
-  text: any;
   constructor() {
     super();
-    this.needLogin = true;
+    this.needLogin = false;
     this.account = "";
     this.password = "";
-    this.text = "text";
   }
 }
 
@@ -41,15 +38,11 @@ export default class Logic extends BaseLogic {
       account: this.data.account,
       password: this.data.password
     });
+    console.log(res);
     if (!res) return;
-    if (this.platform.platform == "mp") {
-      await this.storage.mpremoveUser();
-      await this.storage.mpsetUser(res);
-    } else {
-      await this.storage.removeUser();
-      await this.storage.setUser(res);
-    }
-    this.data.text = res.name;
+    await this.storage.removeUser();
+    await this.storage.setData(res, "account");
+    console.log("storage:", this.storage.getData("account"));
     await this.refreshData();
     await this.toast.open("登录成功", "success");
     let that = this;

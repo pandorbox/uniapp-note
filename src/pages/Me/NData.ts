@@ -31,8 +31,6 @@ export default class NetData extends BaseNetData<Param> {
     super();
   }
   async getNetData(param: NParam, logTag?: string): Promise<Data> {
-    const res = await this.request.call(this.api.Account.login({ username: "qjkang", userpwd: "123" }));
-    this.data.items = res;
     return this.data;
   }
   /** 获取我的信息 */

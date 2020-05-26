@@ -7,6 +7,7 @@ export class Data extends BaseData {
   constructor() {
     super();
     this.note = new Note();
+    this.needLogin = true;
   }
 }
 

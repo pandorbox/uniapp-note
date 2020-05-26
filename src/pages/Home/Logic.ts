@@ -7,7 +7,7 @@ export class Data extends BaseData {
   web: boolean;
   constructor() {
     super();
-    this.needLogin = true;
+    this.needLogin = false;
     this.web = false;
   }
 }
@@ -40,7 +40,7 @@ export default class Logic extends BaseLogic {
     await this.router.openPage("pkgAccount_registe");
   }
   async onOut() {
-    await this.storage.removeUser();
+    await this.storage.removeUser("account");
     this.data.user = new User();
   }
   async onItem() {
