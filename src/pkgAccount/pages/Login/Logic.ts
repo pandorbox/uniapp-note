@@ -50,4 +50,8 @@ export default class Logic extends BaseLogic {
     };
     setTimeout(openpage, 600);
   }
+  /** 注册 */
+  onRegiste() {
+    this.router.openPage("pkgAccount_registe");
+  }
 }

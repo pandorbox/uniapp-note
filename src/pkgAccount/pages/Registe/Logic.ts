@@ -47,11 +47,8 @@ export default class Logic extends BaseLogic {
       account: this.data.account,
       password: this.data.password
     });
-
-    if (res !== 1) {
-      await this.toast.open(res.msg, "none");
-      return;
-    }
+    console.log("res", res);
+    if (!res) return;
     await this.toast.open("注册成功");
     let that = this;
     let openpage = function() {

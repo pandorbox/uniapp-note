@@ -1,7 +1,11 @@
 <template>
   <div class="components">
     <div class="submit" @click="submit()">
-      <text>login</text>
+      <text>登录</text>
+    </div>
+    <div class="bottom">
+      <text class="bottom-text" @click="onForgetPwd()">忘记密码?</text>
+      <text class="bottom-text" @click="onRegiste()">注册</text>
     </div>
   </div>
 </template>
@@ -23,6 +27,9 @@ export default {
   methods: {
     submit() {
       this.$emit("submit", {});
+    },
+    onRegiste() {
+      this.$emit("registe", {});
     }
   }
 };
@@ -33,15 +40,25 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 750px;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 .submit {
-  width: 80%;
+  width: 600rpx;
   height: 70px;
   line-height: 70px;
   color: #ffffff;
   background-color: red;
   border-radius: 10px;
   text-align: center;
+}
+.bottom {
+  margin-top: 30px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  color: red;
 }
 </style>

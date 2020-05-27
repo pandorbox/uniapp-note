@@ -57,10 +57,10 @@ export default {
   margin-top: 200px;
 }
 .form {
-  width: 80%;
+  width: 600px;
 }
 .row {
-  width: 100%;
+  width: 600px;
   display: flex;
   flex-direction: row;
   height: 70px;

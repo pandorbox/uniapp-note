@@ -59,10 +59,10 @@ export default {
   margin-top: 200px;
 }
 .form {
-  width: 80%;
+  width: 600px;
 }
 .row {
-  width: 100%;
+  width: 600px;
   display: flex;
   flex-direction: row;
   height: 70px;
@@ -80,7 +80,7 @@ export default {
   height: 70px;
   line-height: 70px;
   font-size: 30px;
-  border: 1px solid #ffffff;
+  border: 1px solid #666666;
   padding-left: 20px;
 }
 </style>

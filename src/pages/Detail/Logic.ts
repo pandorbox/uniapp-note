@@ -30,8 +30,4 @@ export default class Logic extends BaseLogic {
     let id = param.id;
     await this.router.openPage("noteDetail", { id: id });
   }
-  async onBeingShow() {
-    await this.onBeingCreated();
-    this.refreshData();
-  }
 }
