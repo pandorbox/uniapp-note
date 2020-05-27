@@ -17,9 +17,5 @@ export default class Logic extends BaseLogic {
   constructor() {
     super();
   }
-  async onBeingCreated() {
-    await this.netData.getNetData(this.param);
-    await this.refreshData(this.netData.data);
-  }
-  async onItem(param: any) {}
+  async onBeingCreated() {}
 }

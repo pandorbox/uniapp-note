@@ -27,7 +27,6 @@ export default class Logic extends BaseLogic {
     }
     await this.netData.getNetData(this.param);
     await this.refreshData();
-    console.log(this.data);
   }
   // 页面跳转
   async onTurn() {
@@ -40,7 +39,7 @@ export default class Logic extends BaseLogic {
     await this.router.openPage("pkgAccount_registe");
   }
   async onOut() {
-    await this.storage.removeUser("account");
+    await this.storage.removeData("account");
     this.data.user = new User();
   }
   async onItem() {

@@ -1,12 +1,12 @@
 <template>
   <div class="page" v-if="data !== ''">
-    <Head
+    <!-- <Head
       @login="emit($event,'onLogin')"
       :user="Ldata.user"
       @registe="emit($event,'onRegiste')"
       @out="emit($event,'onOut')"
       :web="Ldata.web"
-    />
+    /> -->
     <Swiper />
     <Notic />
     <Nav @item="emit($event,'onNav')" />

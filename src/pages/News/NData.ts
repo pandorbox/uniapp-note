@@ -38,7 +38,7 @@ export default class NetData extends BaseNetData<Param> {
   }
   /** 获取我的信息 */
   async getMyMsg() {
-    const res = await this.request.call(this.api.Account.userMsg({ username: "" }));
+    const res = await this.request.call(this.api.Account.getUserInfo());
     this.data.getMsg = this.covitem(res);
   }
   /** 我的信息数据转换 */

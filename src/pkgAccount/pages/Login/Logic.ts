@@ -38,9 +38,8 @@ export default class Logic extends BaseLogic {
       account: this.data.account,
       password: this.data.password
     });
-    console.log(res);
     if (!res) return;
-    await this.storage.removeUser();
+    await this.storage.removeData("account");
     await this.storage.setData(res, "account");
     console.log("storage:", this.storage.getData("account"));
     await this.refreshData();
