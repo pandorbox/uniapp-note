@@ -4,7 +4,10 @@
       <img :src="user.photo" alt v-if="user.photo" />
       <img src="../_static/user.png" alt v-else />
     </div>
-    <div class="name">{{ user.name?user.name:'未登录' }}</div>
+    <div class="name">
+      <text>{{ user.name?user.name:'未登录' }}</text>
+      <text class="login-out" v-if="user.name">[退出]</text>
+    </div>
   </div>
 </template>
 <script>
@@ -48,5 +51,15 @@ export default {
 .img > img {
   width: 100%;
   height: 100%;
+}
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.login-out {
+  margin-left: 40px;
+  color: rgb(44, 119, 37);
 }
 </style>

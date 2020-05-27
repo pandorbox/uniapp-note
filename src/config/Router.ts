@@ -4,7 +4,7 @@ export default {
     tit: "首页"
   },
   tab_Two: {
-    url: "pages/Detail/Index",
+    url: "pages/Note/Index",
     tit: "信息"
   },
   tab_Thr: {

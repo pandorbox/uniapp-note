@@ -18,7 +18,7 @@
         "selectedIconPath": "/static/ic-tabbar-home-a.png"
       },
       {
-        "pagePath": "pages/Detail/Index",
+        "pagePath": "pages/Note/Index",
         "text": "笔记",
         "iconPath": "/static/ic-tabbar-detail.png",
         "selectedIconPath": "/static/ic-tabbar-detail-a.png"
@@ -51,7 +51,7 @@
       }
     },
     {
-      "path": "pages/Detail/Index",
+      "path": "pages/Note/Index",
       "style": {
         "navigationBarTitleText": "笔记"
       }
