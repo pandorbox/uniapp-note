@@ -45,6 +45,7 @@ export default class Logic extends BaseLogic {
   /** 提交 */
   async onSubmit() {
     let time = new Date();
+    this.data.note.userId = this.data.user.id;
     this.data.note.creatTime = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
     this.data.note.userNickName = this.data.user.name;
     this.data.note.userPhoto = this.data.user.photo;
