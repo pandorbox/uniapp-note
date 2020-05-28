@@ -5,7 +5,7 @@
     </div>
     <div class="list">
       <div class="item" v-for="(item,index) in lists" :key="index" @click="onItem()">
-        <image class="item-img" :src="item.img" mode="aspectFill" alt />
+        <!-- <image class="item-img" :src="item.img" mode="aspectFill" alt /> -->
         <div class="text">
           <text class="text-tit">{{item.tit}}</text>
           <text class="text-msg">{{item.msg}}</text>
@@ -105,7 +105,7 @@ export default {
   height: 100%;
 }
 .text {
-  width: 470px;
+  width: 690px;
   height: 200px;
   margin-left: 20px;
   display: flex;
